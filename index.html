@@ -1930,7 +1930,228 @@ body.lang-zh .game-result{
   .home-film-visual::after{font-size:13px;right:18px;}
 }
 
+
+/* ===== Listen to Nüshu Songs / 聆听女歌模块 ===== */
+.listen-page{
+  background:linear-gradient(180deg,#fffaf4 0%,#f3ebe2 100%);
+  overflow:hidden;
+  position:relative;
+}
+.listen-page::before{
+  content:"女歌 · 回声 · 女书";
+  position:absolute;
+  left:50%;
+  top:28px;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  font-family:"Noto Serif SC","Songti SC",serif;
+  font-size:clamp(62px,10vw,150px);
+  font-weight:900;
+  letter-spacing:.08em;
+  color:rgba(143,29,22,.055);
+  pointer-events:none;
+}
+.listen-hero{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:34px;
+  align-items:end;
+  padding:58px clamp(24px,5vw,72px) 34px;
+  border-bottom:1px solid rgba(143,29,22,.12);
+}
+.listen-hero h2{
+  margin:12px 0 0;
+  font-size:clamp(50px,7vw,108px);
+  line-height:.9;
+  letter-spacing:-3px;
+  max-width:980px;
+}
+.listen-hero p{
+  margin:22px 0 0;
+  max-width:780px;
+  color:#5f5852;
+  font-size:16px;
+  line-height:1.9;
+}
+.listen-quote-card{
+  border-radius:30px;
+  background:#111;
+  color:#fffaf0;
+  padding:30px;
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 26px 80px rgba(0,0,0,.16);
+  position:relative;
+  overflow:hidden;
+}
+.listen-quote-card::after{
+  content:"𛆁 𛈬 𛈤 𛋒";
+  position:absolute;
+  right:-10px;
+  bottom:-14px;
+  color:rgba(255,250,240,.08);
+  font-size:82px;
+  letter-spacing:.08em;
+}
+.listen-quote-card b{
+  position:relative;
+  z-index:1;
+  font-size:30px;
+  line-height:1.16;
+  letter-spacing:-.8px;
+}
+.listen-quote-card span{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin-top:22px;
+  color:rgba(255,250,240,.7);
+  font-size:13px;
+  line-height:1.8;
+}
+.listen-video-zone{
+  position:relative;
+  z-index:1;
+  padding:34px clamp(24px,5vw,72px) 72px;
+}
+.listen-video-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+.listen-video-card{
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(143,29,22,.12);
+  border-radius:32px;
+  padding:18px;
+  box-shadow:0 20px 58px rgba(87,48,36,.08);
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.listen-video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 80px rgba(87,48,36,.14);
+}
+.listen-video-frame{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+  border-radius:24px;
+  overflow:hidden;
+  background:#111;
+}
+.listen-video-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+.listen-video-info{
+  padding:22px 8px 8px;
+}
+.listen-video-info small{
+  display:block;
+  color:var(--heritage-red,#8f1d16);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.1px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.listen-video-info h3{
+  margin:0 0 12px;
+  font-size:28px;
+  line-height:1.05;
+  letter-spacing:-.8px;
+}
+.listen-video-info p{
+  margin:0;
+  color:#625b55;
+  font-size:14px;
+  line-height:1.85;
+}
+.listen-meaning-strip{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.listen-meaning-card{
+  border-radius:26px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+  padding:24px;
+  min-height:178px;
+  box-shadow:0 12px 30px rgba(0,0,0,.045);
+}
+.listen-meaning-card span{
+  display:block;
+  color:#8a8179;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:34px;
+}
+.listen-meaning-card b{
+  display:block;
+  font-size:23px;
+  line-height:1.16;
+  letter-spacing:-.5px;
+  margin-bottom:10px;
+}
+.listen-meaning-card p{
+  margin:0;
+  color:#6a625c;
+  font-size:13px;
+  line-height:1.75;
+}
+@media (max-width:1000px){
+  .listen-hero,.listen-video-grid,.listen-meaning-strip{grid-template-columns:1fr;}
+  .listen-quote-card{min-height:190px;}
+}
+@media (max-width:620px){
+  .listen-hero{padding:34px 20px 24px;}
+  .listen-hero h2{font-size:44px;letter-spacing:-1.6px;}
+  .listen-video-zone{padding:24px 18px 48px;}
+  .listen-video-card{border-radius:26px;padding:12px;}
+  .listen-video-frame{border-radius:20px;}
+}
+
 </style>
+
+
+  <!-- Image path fallback / 图片路径自动修复：如果同级文件夹找不到图片，会自动到 ./images/ 文件夹里寻找 -->
+  <script>
+    (function(){
+      function filenameOnly(src){
+        try {
+          var clean = String(src || '').split('?')[0].split('#')[0];
+          return decodeURIComponent(clean.substring(clean.lastIndexOf('/') + 1));
+        } catch(e) {
+          var s = String(src || '').split('?')[0].split('#')[0];
+          return s.substring(s.lastIndexOf('/') + 1);
+        }
+      }
+
+      document.addEventListener('error', function(event){
+        var img = event.target;
+        if (!img || img.tagName !== 'IMG') return;
+        if (img.dataset.imageFallbackTried === 'true') return;
+
+        var original = img.getAttribute('src') || '';
+        if (!original || original.indexOf('http') === 0 || original.indexOf('data:') === 0) return;
+
+        img.dataset.imageFallbackTried = 'true';
+        img.src = 'images/' + filenameOnly(original);
+      }, true);
+    })();
+  </script>
+
 </head>
 <body>
   <!-- Opening -->
@@ -1963,6 +2184,7 @@ body.lang-zh .game-result{
   <div class="navlinks premium-navlinks wix-navlinks main-four-nav">
     <button class="top-link" type="button" data-page="home" onclick="showPage('home')"><span class="only-en">Home</span><span class="only-zh">首页</span></button>
     <button class="top-link" type="button" data-page="learn" onclick="showPage('learn')"><span class="only-en">Learn</span><span class="only-zh">学习</span></button>
+    <button class="top-link" type="button" data-page="listen" onclick="showPage('listen')"><span class="only-en">Listen</span><span class="only-zh">聆听女歌</span></button>
     <button class="top-link" type="button" data-page="play" onclick="showPage('play')"><span class="only-en">Play</span><span class="only-zh">游戏</span></button>
     <button class="top-link" type="button" data-page="about" onclick="showPage('about')"><span class="only-en">About</span><span class="only-zh">关于</span></button>
     <div class="language-switch" aria-label="Language switch">
@@ -2006,7 +2228,7 @@ body.lang-zh .game-result{
   <div class="home-film-feature" aria-label="AI Film feature on homepage">
     <div class="home-film-copy">
       <div>
-        <div class="film-label"><span class="only-en">Film</span><span class="only-zh">短片</span></div>
+        <div class="film-label"><span class="only-en">Film</span><span class="only-zh">AI短片</span></div>
         <h2><span class="only-en">Watch the invisible link come alive.</span><span class="only-zh">让看不见的连结在影像中显形。</span></h2>
         <p><span class="only-en">This cinematic chapter transforms Nüshu into a visual story of memory, silence and response. It introduces the emotional core of HerScript Studio before visitors enter the learning and game experience.</span><span class="only-zh">这一电影章节将女书转化为关于记忆、沉默与回应的视觉叙事。它作为 HerScript Studio 的情感入口，引导观众进入后续的学习与游戏体验。</span></p>
       </div>
@@ -2042,9 +2264,10 @@ body.lang-zh .game-result{
     <button type="button" onclick="showPage('culture')"><span class="only-en">Cultural Cards</span><span class="only-zh">文化卡</span></button>
     <button type="button" onclick="showPage('practice')"><span class="only-en">Writing</span><span class="only-zh">书写</span></button>
     <button type="button" onclick="showPage('lab')"><span class="only-en">Translation</span><span class="only-zh">转译</span></button>
+    <button type="button" onclick="showPage('listen')"><span class="only-en">Listen</span><span class="only-zh">聆听女歌</span></button>
   </div>
-  <p class="archive-intro-line"><span class="only-en">Choose one learning path: dictionary, stories, cards, writing or translation.</span><span class="only-zh">选择一种学习路径：字典、故事、卡牌、书写或转译。</span></p>
-  <div class="wix-accordion-layout"><div class="wix-accordion-copy"><h3><span class="only-en">Four ways to understand Nüshu</span><span class="only-zh">四种方式理解女书</span></h3><p><span class="only-en">Each module can work independently on website.com, or together as one complete learning experience.</span><span class="only-zh">每个模块都可以在 website.com 上独立使用，也可以组合成完整学习体验。</span></p></div><div class="wix-accordion-list"><button onclick="showPage('culture')"><b><span class="only-en">Cultural Cards</span><span class="only-zh">文化卡牌</span></b><span><span class="only-en">Open key knowledge through flip-card interaction.</span><span class="only-zh">通过翻卡互动打开女书文化知识。</span></span></button><button onclick="focusLearnDictionary()"><b><span class="only-en">Dictionary</span><span class="only-zh">字典</span></b><span><span class="only-en">Connect characters with English, Chinese and pinyin.</span><span class="only-zh">连接女书字形、英文、中文与拼音。</span></span></button><button onclick="showPage('practice')"><b><span class="only-en">Writing Practice</span><span class="only-zh">书写练习</span></b><span><span class="only-en">Let users trace and write Nüshu directly on screen.</span><span class="only-zh">让用户直接在屏幕上临摹与书写女书。</span></span></button><button onclick="showPage('lab')"><b><span class="only-en">Language Lab</span><span class="only-zh">语言实验室</span></b><span><span class="only-en">Experiment with translation, input and composition.</span><span class="only-zh">体验翻译、输入与符号组合。</span></span></button></div></div>
+  <p class="archive-intro-line"><span class="only-en">Choose one learning path: dictionary, stories, cards, writing, translation or listening to Nüshu songs.</span><span class="only-zh">选择一种学习路径：字典、故事、卡牌、书写、转译或聆听女歌。</span></p>
+  <div class="wix-accordion-layout"><div class="wix-accordion-copy"><h3><span class="only-en">Four ways to understand Nüshu</span><span class="only-zh">四种方式理解女书</span></h3><p><span class="only-en">Each module can work independently on website.com, or together as one complete learning experience.</span><span class="only-zh">每个模块都可以在 website.com 上独立使用，也可以组合成完整学习体验。</span></p></div><div class="wix-accordion-list"><button onclick="showPage('culture')"><b><span class="only-en">Cultural Cards</span><span class="only-zh">文化卡牌</span></b><span><span class="only-en">Open key knowledge through flip-card interaction.</span><span class="only-zh">通过翻卡互动打开女书文化知识。</span></span></button><button onclick="focusLearnDictionary()"><b><span class="only-en">Dictionary</span><span class="only-zh">字典</span></b><span><span class="only-en">Connect characters with English, Chinese and pinyin.</span><span class="only-zh">连接女书字形、英文、中文与拼音。</span></span></button><button onclick="showPage('practice')"><b><span class="only-en">Writing Practice</span><span class="only-zh">书写练习</span></b><span><span class="only-en">Let users trace and write Nüshu directly on screen.</span><span class="only-zh">让用户直接在屏幕上临摹与书写女书。</span></span></button><button onclick="showPage('lab')"><b><span class="only-en">Language Lab</span><span class="only-zh">语言实验室</span></b><span><span class="only-en">Experiment with translation, input and composition.</span><span class="only-zh">体验翻译、输入与符号组合。</span></span></button><button onclick="showPage('listen')"><b><span class="only-en">Listen to Nüshu Songs</span><span class="only-zh">聆听女歌</span></b><span><span class="only-en">Enter Nüshu through women’s songs, melody and oral memory.</span><span class="only-zh">通过女歌、旋律与口传记忆进入女书世界。</span></span></button></div></div>
 
   <div class="learn-dictionary-panel" id="learnDictionaryPanel">
     <div class="learn-dictionary-head">
@@ -2059,6 +2282,53 @@ body.lang-zh .game-result{
     <div class="dict-grid compact-dict" id="learnDictGrid"></div>
   </div>
 </section>
+
+
+      <section class="section page-view portal-page listen-page" id="listen">
+        <div class="listen-hero">
+          <div>
+            <div class="kicker dark-kicker"><span class="only-en">Listen</span><span class="only-zh">聆听女歌</span></div>
+            <h2><span class="only-en">Listen to Nüshu Songs.</span><span class="only-zh">聆听女歌。</span></h2>
+            <p><span class="only-en">Nüshu is not only a written script, but also a voice carried by women through singing, memory and response. These videos let visitors hear the emotional texture behind the characters.</span><span class="only-zh">女书不仅是一种文字，也是一种经由歌唱、记忆与回应传承的女性声音。通过这些视频，观众可以听见文字背后的情感质地。</span></p>
+          </div>
+          <div class="listen-quote-card">
+            <b><span class="only-en">Before Nüshu was read, it was often heard.</span><span class="only-zh">女书被阅读之前，也曾在歌声中被听见。</span></b>
+            <span><span class="only-en">Songs preserve emotion, rhythm, dialect, sisterhood and lived memory.</span><span class="only-zh">歌声保存了情感、节奏、方言、姐妹情谊与生活记忆。</span></span>
+          </div>
+        </div>
+
+        <div class="listen-video-zone">
+          <div class="listen-video-grid">
+            <article class="listen-video-card">
+              <div class="listen-video-frame">
+                <iframe src="https://www.youtube.com/embed/0tab4L1fE9A" title="Nüshu Song Video 1" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="listen-video-info">
+                <small>01 · Nüshu Song</small>
+                <h3><span class="only-en">Learning through melody</span><span class="only-zh">女书歌谣 · 以歌传字</span></h3>
+                <p><span class="only-en">Women learned, remembered and transmitted Nüshu through repeated singing, turning characters into a shared emotional language.</span><span class="only-zh">女书常通过歌唱传承。女子在反复吟唱中学习、记忆与传递文字，让文字成为共同的情感语言。</span></p>
+              </div>
+            </article>
+
+            <article class="listen-video-card">
+              <div class="listen-video-frame">
+                <iframe src="https://www.youtube.com/embed/jaYtrEqStdM" title="Nüshu Song Video 2" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="listen-video-info">
+                <small>02 · Oral Memory</small>
+                <h3><span class="only-en">Echoes of women’s memory</span><span class="only-zh">女歌回声 · 女性记忆</span></h3>
+                <p><span class="only-en">The songs carry companionship, comfort and blessing. What once sounded private can still be heard across time.</span><span class="only-zh">女歌承载女性之间的陪伴、安慰与祝福。那些曾经私密的声音，穿越时间后仍然可以被听见。</span></p>
+              </div>
+            </article>
+          </div>
+
+          <div class="listen-meaning-strip">
+            <div class="listen-meaning-card"><span>Memory</span><b><span class="only-en">Sung archives</span><span class="only-zh">歌声中的档案</span></b><p><span class="only-en">Songs keep personal stories alive when written records are fragile.</span><span class="only-zh">当文字档案脆弱时，歌声保存了个人故事。</span></p></div>
+            <div class="listen-meaning-card"><span>Learning</span><b><span class="only-en">Learning by listening</span><span class="only-zh">在聆听中学习</span></b><p><span class="only-en">Melody helps visitors remember sound, rhythm and cultural context.</span><span class="only-zh">旋律帮助观众记住声音、节奏与文化语境。</span></p></div>
+            <div class="listen-meaning-card"><span>Connection</span><b><span class="only-en">A living link</span><span class="only-zh">活着的连结</span></b><p><span class="only-en">Listening turns the website from visual display into embodied experience.</span><span class="only-zh">聆听让网站从视觉展示转向更完整的身体体验。</span></p></div>
+          </div>
+        </div>
+      </section>
 
 
       <section class="section page-view portal-page play-hub-page" id="play">
@@ -2859,7 +3129,7 @@ body.lang-zh .game-result{
       const page = document.getElementById(target);
       if(page) page.classList.add('active');
       const topLevelMap = {
-        home:'home', learn:'learn', culture:'learn', stories:'learn', language:'learn', practice:'learn', lab:'learn', film:'learn',
+        home:'home', learn:'learn', culture:'learn', stories:'learn', language:'learn', practice:'learn', lab:'learn', listen:'listen', film:'learn',
         play:'play', games:'play', about:'about', project:'learn'
       };
       const activeTop = topLevelMap[target] || target;
